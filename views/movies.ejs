@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Каталог фильмов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .movie-list {
+            list-style: none;
+            padding: 0;
+        }
+        .movie-item {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .movie-item a {
+            text-decoration: none;
+            color: hsl(300, 76%, 60%);
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .movie-item p {
+            margin: 5px 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Каталог фильмов</h1>
+    
+    <ul class="movie-list">
+        <% movies.forEach(movie => { %>
+            <li class="movie-item">
+                <a href="/movies/<%= movie.id %>"><%= movie.title %></a>
+                <p><strong>Год:</strong> <%= movie.year %> | <strong>Жанр:</strong> <%= movie.genre %></p>
+                <p><strong>Режиссёр:</strong> <%= movie.director %></p>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
